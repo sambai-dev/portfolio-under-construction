@@ -6,6 +6,7 @@
 // - Subtitle description
 // - Shimmer CTA button (Download CV)
 // - Framer Motion entrance animations
+// - Grid background pattern
 
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
@@ -17,6 +18,19 @@ export default function Hero() {
       id="home"
       className="relative z-10 min-h-screen flex flex-col items-center justify-center py-20"
     >
+      {/* Grid background pattern - full viewport width with edge fade */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:40px_40px]"
+          style={{
+            maskImage:
+              "radial-gradient(ellipse 60% 50% at 50% 50%, black 40%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 60% 50% at 50% 50%, black 40%, transparent 100%)",
+          }}
+        />
+      </div>
+
       {/* Location Badge - Animated fade in from bottom */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -51,7 +65,7 @@ export default function Hero() {
         {/* First line with gradient highlight */}
         <span className="text-stone-200">Building Modern </span>
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">
-          &
+          &amp;
         </span>
         <br />
         {/* Second line */}
