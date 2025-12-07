@@ -14,7 +14,10 @@ import { Mail, Linkedin, ArrowRight } from "lucide-react";
 
 export default function ContactCTA() {
   return (
-    <section id="contact" className="relative z-10 py-12 sm:py-16">
+    <section
+      id="contact"
+      className="relative z-10 py-12 sm:py-16 border-t border-dark-700/50"
+    >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}

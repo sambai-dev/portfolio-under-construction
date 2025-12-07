@@ -15,7 +15,7 @@ export default function Footer() {
           <span className="text-stone-600 mx-2">·</span>
           Full-Stack Developer
           <span className="text-stone-600 mx-2">·</span>
-          New Zealand
+          Hamilton, New Zealand
         </p>
 
         {/* Line 2: Availability + Email */}

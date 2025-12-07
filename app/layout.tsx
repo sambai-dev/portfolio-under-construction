@@ -13,13 +13,14 @@ export const metadata: Metadata = {
     default: "Sam Bai - Full Stack Developer",
   },
   description:
-    "Sam Bai, full stack developer based in New Zealand. Building modern and scalable web solutions.",
+    "Sam Bai, full stack developer based in Hamilton, New Zealand. Building modern and scalable web solutions.",
   keywords: [
     "Full Stack Developer",
     "Web Developer",
     "React",
     "Next.js",
     "TypeScript",
+    "Hamilton",
     "New Zealand",
   ],
   authors: [{ name: "Sam Bai" }],
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Sam Bai - Full Stack Developer",
     description:
-      "Building modern and scalable web solutions. Based in New Zealand.",
+      "Building modern and scalable web solutions. Based in Hamilton, New Zealand.",
     siteName: "Sam Bai Portfolio",
   },
 };

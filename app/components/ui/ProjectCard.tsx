@@ -43,7 +43,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       className={cn(
         "group relative rounded-xl overflow-hidden",
         "bg-dark-200 border border-dark-700",
-        "hover:border-stone-500 transition-all duration-300"
+        "hover:border-stone-500 transition-all duration-300",
+        // Featured card gets subtle glow and spans full width
+        featured &&
+          "md:col-span-2 ring-1 ring-primary/20 shadow-lg shadow-primary/5"
       )}
     >
       {/* Featured badge */}

@@ -12,6 +12,8 @@ import { motion } from "framer-motion";
 export default function Projects() {
   return (
     <section className="relative z-10 py-14 sm:py-20" id="projects">
+      {/* Subtle background gradient for section separation */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-dark-200/30 to-transparent" />
       {/* Section header */}
       <div className="space-y-3 mb-10">
         <motion.h2
