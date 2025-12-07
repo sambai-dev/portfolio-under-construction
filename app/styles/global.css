@@ -91,4 +91,25 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Grid pattern background for hero section */
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        rgba(79, 79, 79, 0.18) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(79, 79, 79, 0.18) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Radial gradient mask for fading grid edges */
+  .grid-mask {
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 80%);
+    -webkit-mask-image: radial-gradient(
+      ellipse at center,
+      black 20%,
+      transparent 80%
+    );
+  }
 }
