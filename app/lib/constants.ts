@@ -1,55 +1,63 @@
 // Constants file for portfolio data
 // Update these values with your own information
 
-// Technology/Skills cards - displayed in the Skills section
+// Technology/Skills cards - organized by category
 export const techCardsItems = [
   {
     name: "React",
     description: "JavaScript Library",
     imageUrl: "/imgs/logos/react.svg",
     bgColor: "bg-[#61DAFB]/20",
+    category: "Frontend",
   },
   {
     name: "Next.js",
     description: "React Framework",
     imageUrl: "/imgs/logos/nextdotjs.svg",
     bgColor: "bg-white/10",
+    category: "Frontend",
   },
   {
     name: "TypeScript",
     description: "Typed JavaScript",
     imageUrl: "/imgs/logos/typescript.svg",
     bgColor: "bg-[#3178C6]/20",
+    category: "Frontend",
   },
   {
     name: "Tailwind CSS",
     description: "Utility-First CSS",
     imageUrl: "/imgs/logos/tailwindcss.svg",
     bgColor: "bg-[#06B6D4]/20",
+    category: "Frontend",
   },
   {
     name: "Node.js",
     description: "JavaScript Runtime",
     imageUrl: "/imgs/logos/nodedotjs.svg",
     bgColor: "bg-[#68A063]/20",
+    category: "Backend & Database",
   },
   {
     name: "PostgreSQL",
     description: "SQL Database",
     imageUrl: "/imgs/logos/postgresql.svg",
     bgColor: "bg-[#336791]/20",
-  },
-  {
-    name: "Git",
-    description: "Version Control",
-    imageUrl: "/imgs/logos/git.svg",
-    bgColor: "bg-[#F05032]/20",
+    category: "Backend & Database",
   },
   {
     name: "Supabase",
     description: "Backend as a Service",
     imageUrl: "/imgs/logos/supabase.svg",
     bgColor: "bg-[#3ECF8E]/20",
+    category: "Backend & Database",
+  },
+  {
+    name: "Git",
+    description: "Version Control",
+    imageUrl: "/imgs/logos/git.svg",
+    bgColor: "bg-[#F05032]/20",
+    category: "Tools",
   },
 ];
 
