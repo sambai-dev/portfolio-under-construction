@@ -72,11 +72,7 @@ export const portfolioProjects = [
     valueProp:
       "A production-ready Kanban board that helps teams organize work with real-time collaboration.",
     // 2-3 bullet points emphasizing implementation and impact
-    highlights: [
-      "Built intuitive drag-and-drop interface with real-time sync across multiple users",
-      "Integrated Clerk authentication with PostgreSQL for secure multi-tenant data isolation",
-      "Implemented optimistic UI updates for snappy UX, even over slow connections",
-    ],
+    highlights: [],
     role: "Sole full-stack developer",
     imageUrl: "/imgs/projects/taskflow.png",
     techStack: ["Next.js", "TypeScript", "Supabase", "Clerk", "PostgreSQL"],
@@ -90,11 +86,7 @@ export const portfolioProjects = [
     subheading: "Community Transport Platform",
     valueProp:
       "A complete booking system for a NZ non-profit, replacing manual coordination with automated scheduling.",
-    highlights: [
-      "Designed real-time calendar with booking capacity indicators and driver schedule sync",
-      "Automated email notifications using Nodemailer for booking confirmations and reminders",
-      "Built role-based access for admins, drivers, and passengers with secure JWT auth",
-    ],
+    highlights: [],
     role: "Full-stack developer for non-profit client",
     imageUrl: "/imgs/projects/wakawebsite.png",
     techStack: ["React", "Node.js", "Express", "MongoDB", "Nodemailer"],
@@ -107,11 +99,7 @@ export const portfolioProjects = [
     subheading: "Personal Portfolio",
     valueProp:
       "A polished, performant portfolio showcasing modern frontend practices with smooth animations.",
-    highlights: [
-      "Crafted responsive layouts with Tailwind CSS optimized for all screen sizes",
-      "Implemented Framer Motion animations for delightful micro-interactions",
-      "Achieved 90+ Lighthouse scores for performance, accessibility, and SEO",
-    ],
+    highlights: [],
     role: "Designer & developer",
     imageUrl: "/imgs/projects/portfolio.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],

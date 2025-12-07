@@ -11,36 +11,33 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <section className="relative z-10 py-16 sm:py-24" id="projects">
-      {/* Section header with animations */}
-      <div className="space-y-3 sm:space-y-4 mb-10 sm:mb-12">
-        {/* Main heading - slides in from left */}
+    <section className="relative z-10 py-14 sm:py-20" id="projects">
+      {/* Section header */}
+      <div className="space-y-3 mb-10">
         <motion.h2
           initial={{ opacity: 0, x: -75 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold text-stone-200"
+          className="text-3xl min-[430px]:text-4xl font-bold text-stone-200"
         >
           My Portfolio
         </motion.h2>
 
-        {/* Description - professional tone */}
         <motion.p
           initial={{ opacity: 0, x: -90 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="text-sm min-[430px]:text-base max-w-lg md:max-w-2xl text-stone-400 leading-relaxed"
+          className="text-sm sm:text-base max-w-lg text-stone-400"
         >
-          Production-ready projects showcasing full-stack capabilities—from
-          intuitive UIs to robust backend architectures.
+          Production-ready projects showcasing full-stack capabilities.
         </motion.p>
       </div>
 
-      {/* Projects grid - responsive with featured project spanning full width */}
+      {/* Projects grid - 2 columns for impact */}
       <motion.div
-        initial={{ opacity: 0, y: 75 }}
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.25 }}
