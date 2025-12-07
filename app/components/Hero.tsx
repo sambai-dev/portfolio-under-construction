@@ -23,30 +23,21 @@ export default function Hero() {
         <div className="absolute inset-0 w-full h-full bg-grid grid-mask" />
       </div>
 
-      {/* Location Badge - Responsive: stacked on mobile, inline on larger screens */}
+      {/* Location Badge - Small accent above main heading */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 px-4 py-2 sm:py-2 rounded-2xl sm:rounded-full bg-dark-200 border border-dark-700 mb-6 sm:mb-8"
+        transition={{ duration: 0.4, delay: 0.1 }}
+        className="flex items-center gap-2 text-xs sm:text-sm text-stone-400 mb-3"
       >
-        <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-primary" />
-          <span className="text-xs sm:text-sm text-stone-100">
-            Based In New Zealand
-          </span>
-        </div>
-        <span className="hidden sm:block text-stone-600">|</span>
-        <div className="flex items-center gap-2">
-          {/* Pulsing green dot */}
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span className="text-xs sm:text-sm font-medium text-emerald-400">
-            Open for Work
-          </span>
-        </div>
+        <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-stone-500" />
+        <span>Based in New Zealand</span>
+        <span className="text-stone-600">•</span>
+        <span className="relative flex h-1.5 w-1.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+        </span>
+        <span className="text-emerald-400">Open for Work</span>
       </motion.div>
 
       {/* Main Heading - Responsive typography */}
@@ -66,16 +57,15 @@ export default function Hero() {
         <span className="text-stone-200">Scalable Web Solutions</span>
       </motion.h1>
 
-      {/* Description Text - Better mobile padding */}
+      {/* Value Statement - Short one-liner */}
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-stone-400 text-center max-w-xl sm:max-w-2xl px-2"
+        transition={{ duration: 0.4, delay: 0.3 }}
+        className="mt-3 sm:mt-4 text-sm sm:text-base text-stone-400 text-center px-2"
       >
-        Hi, I&apos;m <span className="text-primary font-medium">Sam Bai</span>,
-        a graduate developer passionate about building clean, user-friendly web
-        applications.
+        <span className="text-primary font-medium">Sam Bai</span> · Graduate
+        Full-Stack Developer · Crafting clean, user-friendly experiences
       </motion.p>
 
       {/* CTA Buttons - Stack on mobile, side by side on larger screens */}
@@ -83,7 +73,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center gap-4"
+        className="mt-5 sm:mt-6 flex flex-col sm:flex-row items-center gap-3"
       >
         {/* See My Work button - outlined style */}
         <a
