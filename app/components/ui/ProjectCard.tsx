@@ -64,7 +64,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           alt={heading}
           fill
           priority={featured}
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark-200 via-dark-200/40 to-transparent" />
       </div>
