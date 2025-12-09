@@ -7,21 +7,10 @@ import { cn } from "@/app/lib/utils";
 import { ExternalLink, Github, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { Project } from "@/app/lib/types";
 
 interface ProjectCardProps {
-  project: {
-    id: string;
-    heading: string;
-    subheading: string;
-    valueProp: string;
-    highlights: string[];
-    role: string;
-    imageUrl: string;
-    techStack: string[];
-    liveUrl?: string;
-    githubUrl?: string;
-    featured?: boolean;
-  };
+  project: Project;
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {

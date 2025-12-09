@@ -1,8 +1,10 @@
 // Constants file for portfolio data
 // Update these values with your own information
 
+import type { TechCard, Project } from "./types";
+
 // Technology/Skills cards - organized by category
-export const techCardsItems = [
+export const techCardsItems: TechCard[] = [
   {
     name: "React",
     description: "JavaScript Library",
@@ -62,23 +64,20 @@ export const techCardsItems = [
 ];
 
 // Portfolio projects - displayed in the Projects section
-// Each project includes outcome-focused copy and role information for recruiter-friendly display
-export const portfolioProjects = [
+export const portfolioProjects: Project[] = [
   {
     id: "project-1",
     heading: "TaskFlow",
     subheading: "SaaS Task Management Platform",
-    // One-line value proposition focused on impact
     valueProp:
       "A production-ready Kanban board that helps teams organize work with real-time collaboration.",
-    // 2-3 bullet points emphasizing implementation and impact
     highlights: [],
     role: "Sole full-stack developer",
     imageUrl: "/imgs/projects/taskflow.png",
     techStack: ["Next.js", "TypeScript", "Supabase", "Clerk", "PostgreSQL"],
     liveUrl: "https://taskboard-nextjs.vercel.app/",
     githubUrl: "https://github.com/Lime-oss-hash/taskflow-board",
-    featured: true, // Flagship project
+    featured: true,
   },
   {
     id: "project-2",
@@ -107,18 +106,4 @@ export const portfolioProjects = [
     githubUrl: "https://github.com/Lime-oss-hash/portfolio-under-construction",
     featured: false,
   },
-];
-
-// Navigation links for footer
-export const mainNavigationLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
-
-// Social media links
-export const socialLinks = [
-  { label: "GitHub", href: "https://github.com/Lime-oss-hash" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/sam-bai-dev/" },
 ];

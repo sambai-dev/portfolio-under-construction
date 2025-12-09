@@ -10,14 +10,8 @@
 import { cn } from "@/app/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { JSX, useState, useEffect, useRef } from "react";
-
-// TypeScript interface for navigation items
-interface NavItem {
-  name: string;
-  link: string;
-  icon?: JSX.Element;
-}
+import { useState, useEffect, useRef } from "react";
+import type { NavItem } from "@/app/lib/types";
 
 interface NavbarProps {
   navItems: NavItem[];
