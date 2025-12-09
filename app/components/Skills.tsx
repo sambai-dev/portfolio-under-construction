@@ -1,43 +1,19 @@
 "use client";
 
 // Skills Section - Performance Optimized with CSS Animations
-// PERF: Uses CSS transitions instead of Framer Motion for scroll animations
-// Intersection Observer adds 'in-view' class to trigger animations
+// Uses useScrollAnimation hook for scroll-triggered animations
 
 import { techCardsItems } from "@/app/lib/constants";
+import { useScrollAnimation } from "@/app/hooks/useScrollAnimation";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
 
-// Define category order
+// Define category order and their animation delay classes
+// Note: Tailwind requires full class names to be statically analyzable
 const categories = ["Frontend", "Backend & Database", "Tools"];
+const delayClasses = ["animate-delay-2", "animate-delay-3", "animate-delay-4"];
 
 export default function Skills() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // Lightweight intersection observer to trigger CSS animations
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Add in-view class to all animate-on-scroll elements
-            entry.target
-              .querySelectorAll(".animate-on-scroll")
-              .forEach((el) => {
-                el.classList.add("in-view");
-              });
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "-50px" }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useScrollAnimation();
 
   // Group tech items by category
   const groupedTech = categories.map((category) => ({
@@ -65,9 +41,7 @@ export default function Skills() {
         {groupedTech.map((group, groupIndex) => (
           <div
             key={group.name}
-            className={`animate-on-scroll animate-delay-${
-              groupIndex + 2
-            } rounded-xl border border-neutral-800 bg-neutral-900/70 px-4 py-4 md:px-5 md:py-5 flex flex-col gap-4`}
+            className={`animate-on-scroll ${delayClasses[groupIndex]} rounded-xl border border-neutral-800 bg-neutral-900/70 px-4 py-4 md:px-5 md:py-5 flex flex-col gap-4`}
           >
             {/* Category title */}
             <h3 className="text-sm font-semibold text-neutral-200">

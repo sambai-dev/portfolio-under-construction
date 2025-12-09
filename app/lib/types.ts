@@ -17,7 +17,6 @@ export interface NavItem {
  */
 export interface TechCard {
   name: string;
-  description: string;
   imageUrl: string;
   bgColor: string;
   category: "Frontend" | "Backend & Database" | "Tools";

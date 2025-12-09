@@ -9,7 +9,7 @@
 // - Fully mobile responsive
 
 import { motion } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { MapPin, ChevronRight, Download } from "lucide-react";
 import WordReveal from "./WordReveal";
 
 export default function Hero() {
@@ -67,24 +67,13 @@ export default function Hero() {
         {/* See My Work button - with katana shine effect on hover */}
         <a
           href="#projects"
+          aria-label="See my portfolio projects"
           className="group relative w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-dark-200 border border-dark-700 text-stone-200 text-sm font-medium hover:border-stone-400 hover:bg-dark-300 transition-all duration-300 overflow-hidden"
         >
           {/* Katana shine overlay - triggers on hover */}
           <span className="absolute top-0 -left-[100%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-25deg] group-hover:left-[150%] transition-[left] duration-700 ease-in-out z-10 pointer-events-none" />
           See My Work
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="m9 18 6-6-6-6" />
-          </svg>
+          <ChevronRight className="w-4 h-4" />
         </a>
 
         {/* Download CV - text link style with icon */}
@@ -92,24 +81,10 @@ export default function Hero() {
           href="/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Download my CV (PDF)"
           className="flex items-center gap-2 text-stone-300 hover:text-primary transition-colors duration-300"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-primary"
-          >
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-            <polyline points="7 10 12 15 17 10" />
-            <line x1="12" x2="12" y1="15" y2="3" />
-          </svg>
+          <Download className="w-5 h-5 text-primary" />
           <span className="font-medium text-sm sm:text-base">Download CV</span>
         </a>
       </motion.div>

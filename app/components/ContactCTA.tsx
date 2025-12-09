@@ -1,38 +1,14 @@
 // ContactCTA - Professional call-to-action section for hiring managers
-// Uses CSS-based scroll animation for zero client JS
+// Uses useScrollAnimation hook for scroll-triggered animations
 
 "use client";
 
 import Link from "next/link";
 import { Mail, Linkedin, ArrowRight } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useScrollAnimation } from "@/app/hooks/useScrollAnimation";
 
 export default function ContactCTA() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // Lightweight intersection observer to trigger CSS animations
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target
-              .querySelectorAll(".animate-on-scroll")
-              .forEach((el) => {
-                el.classList.add("in-view");
-              });
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "-50px" }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useScrollAnimation();
 
   return (
     <section

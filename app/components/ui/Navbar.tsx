@@ -12,9 +12,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { House, BriefcaseBusiness, UserRound, Contact } from "lucide-react";
+import type { NavItem } from "@/app/lib/types";
 
-// Navigation items defined here since this is a client component
-const navItems = [
+// Navigation items with proper typing
+const navItems: NavItem[] = [
   { name: "Home", link: "#home", icon: <House /> },
   { name: "Projects", link: "#projects", icon: <BriefcaseBusiness /> },
   { name: "About", link: "#about", icon: <UserRound /> },
@@ -126,6 +127,3 @@ export const Navbar = ({ className }: NavbarProps) => {
     </AnimatePresence>
   );
 };
-
-// Also export as default for flexibility
-export default Navbar;

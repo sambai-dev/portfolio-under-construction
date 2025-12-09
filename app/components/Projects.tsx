@@ -1,38 +1,17 @@
 // Projects Section - Enhanced portfolio display with recruiter-friendly features
-// Uses CSS-based scroll animation for smooth fade-in
+// Uses useScrollAnimation hook for scroll-triggered animations
 
 "use client";
 
 import { portfolioProjects } from "@/app/lib/constants";
+import { useScrollAnimation } from "@/app/hooks/useScrollAnimation";
 import ProjectCard from "./ui/ProjectCard";
-import { useEffect, useRef } from "react";
+
+// Tailwind requires full class names to be statically analyzable
+const delayClasses = ["animate-delay-1", "animate-delay-2", "animate-delay-3"];
 
 export default function Projects() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // Lightweight intersection observer to trigger CSS animations
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target
-              .querySelectorAll(".animate-on-scroll")
-              .forEach((el) => {
-                el.classList.add("in-view");
-              });
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "-50px" }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useScrollAnimation();
 
   return (
     <section
@@ -58,7 +37,7 @@ export default function Projects() {
         {portfolioProjects.map((project, index) => (
           <div
             key={project.id}
-            className={`animate-on-scroll animate-delay-${index + 1}`}
+            className={`animate-on-scroll ${delayClasses[index] || ""}`}
           >
             <ProjectCard project={project} />
           </div>
