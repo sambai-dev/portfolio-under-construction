@@ -78,7 +78,7 @@ export default function Hero() {
 
         {/* Download CV - text link style with icon */}
         <a
-          href="/resume.pdf"
+          href="/resume/SamBai_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Download my CV (PDF)"

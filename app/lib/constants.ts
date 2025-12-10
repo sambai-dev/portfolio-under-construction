@@ -68,7 +68,7 @@ export const portfolioProjects: Project[] = [
     imageUrl: "/imgs/projects/taskflow.png",
     techStack: ["Next.js", "TypeScript", "Supabase", "Clerk", "PostgreSQL"],
     liveUrl: "https://taskboard-nextjs.vercel.app/",
-    githubUrl: "https://github.com/Lime-oss-hash/taskflow-board",
+    githubUrl: "https://github.com/sambai-dev/taskflow-board",
     featured: true,
   },
   {
@@ -81,7 +81,7 @@ export const portfolioProjects: Project[] = [
     role: "Full-stack developer for non-profit client",
     imageUrl: "/imgs/projects/wakawebsite.png",
     techStack: ["React", "Node.js", "Express", "MongoDB", "Nodemailer"],
-    githubUrl: "https://github.com/Lime-oss-hash/frontend123",
+    githubUrl: "https://github.com/sambai-dev/frontend123",
     featured: false,
   },
   {
@@ -95,7 +95,7 @@ export const portfolioProjects: Project[] = [
     imageUrl: "/imgs/projects/portfolio.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://portfolio-under-construction-six.vercel.app/",
-    githubUrl: "https://github.com/Lime-oss-hash/portfolio-under-construction",
+    githubUrl: "https://github.com/sambai-dev/portfolio-under-construction",
     featured: false,
   },
 ];

@@ -33,7 +33,7 @@ export default function Footer() {
         {/* Line 3: Social icons */}
         <div className="flex items-center gap-5 pt-2">
           <Link
-            href="https://github.com/Lime-oss-hash"
+            href="https://github.com/sambai-dev"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
