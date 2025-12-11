@@ -58,7 +58,8 @@ export default function Skills() {
                   >
                     <Image
                       src={tech.imageUrl}
-                      alt={tech.name}
+                      alt=""
+                      aria-hidden="true"
                       width={40}
                       height={40}
                       loading="lazy"

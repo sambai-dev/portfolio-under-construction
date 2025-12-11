@@ -89,12 +89,11 @@ export const portfolioProjects: Project[] = [
     heading: "DevPortfolio",
     subheading: "Personal Portfolio",
     valueProp:
-      "A polished, performant portfolio showcasing modern frontend practices with smooth animations.",
+      "Exploring Framer Motion animation patterns and portfolio performance optimizations.",
     highlights: [],
     role: "Designer & developer",
     imageUrl: "/imgs/projects/portfolio.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://portfolio-under-construction-six.vercel.app/",
     githubUrl: "https://github.com/sambai-dev/portfolio-under-construction",
     featured: false,
   },
