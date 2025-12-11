@@ -23,7 +23,7 @@ export default function Projects() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-dark-200/30 to-transparent" />
 
       {/* Section header with scroll animation */}
-      <div className="animate-on-scroll space-y-3 mb-10">
+      <div className="animate-on-scroll space-y-3 mb-6">
         <h2 className="text-3xl min-[430px]:text-4xl font-bold text-stone-200">
           My Portfolio
         </h2>
