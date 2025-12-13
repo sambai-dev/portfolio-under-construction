@@ -50,6 +50,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           src={imageUrl}
           alt={heading}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           priority={featured}
           className="object-cover"
         />
