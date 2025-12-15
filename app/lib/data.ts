@@ -63,7 +63,11 @@ export const portfolioProjects: Project[] = [
     subheading: "SaaS Task Management Platform",
     valueProp:
       "A production-ready Kanban board that helps teams organize work with real-time collaboration.",
-    highlights: [],
+    highlights: [
+      "Real-time sync across tabs using Supabase Realtime subscriptions",
+      "Drag-and-drop task management powered by dnd-kit",
+      "Row-level security policies for multi-tenant data isolation",
+    ],
     role: "Sole full-stack developer",
     imageUrl: "/imgs/projects/taskflow.png",
     techStack: ["Next.js", "TypeScript", "Supabase", "Clerk", "PostgreSQL"],
@@ -77,7 +81,11 @@ export const portfolioProjects: Project[] = [
     subheading: "Internal Booking System",
     valueProp:
       "A complete booking system for a NZ non-profit, replacing manual coordination with automated scheduling.",
-    highlights: [],
+    highlights: [
+      "Automated email confirmations via Nodemailer integration",
+      "RESTful API with Express.js for booking management",
+      "MongoDB for flexible scheduling data storage",
+    ],
     role: "Full-stack Developer · Client Project",
     imageUrl: "/imgs/projects/wakawebsite.png",
     techStack: ["React", "Node.js", "Express", "MongoDB", "Nodemailer"],
@@ -89,7 +97,11 @@ export const portfolioProjects: Project[] = [
     subheading: "Personal Portfolio",
     valueProp:
       "Exploring Framer Motion animation patterns and portfolio performance optimizations.",
-    highlights: [],
+    highlights: [
+      "Custom scroll-triggered animations with IntersectionObserver",
+      "Optimized Core Web Vitals with Next.js App Router",
+      "Responsive design with mobile-first approach",
+    ],
     role: "Designer & developer",
     imageUrl: "/imgs/projects/portfolio.png",
     techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
