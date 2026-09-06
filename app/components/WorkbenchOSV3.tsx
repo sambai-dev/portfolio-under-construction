@@ -3230,6 +3230,32 @@ export default function WorkbenchOSV3({
         </AnimatePresence>
 
         <nav
+          className="os-mobile-workspaces"
+          aria-label="Workspaces"
+          aria-hidden={isPaletteOpen || undefined}
+          inert={isPaletteOpen || undefined}
+        >
+          {workspaces.map((workspace, index) => {
+            const openCount = session.windows.filter(
+              (windowState) => windowState.workspaceId === workspace.id && windowState.open,
+            ).length;
+            return (
+              <button
+                key={workspace.id}
+                type="button"
+                aria-pressed={workspace.id === activeWorkspaceId}
+                title={`${workspace.description} (Alt+${index + 1})`}
+                onClick={() => switchWorkspace(workspace.id)}
+              >
+                <span className="os-mobile-workspace-dot" aria-hidden="true" />
+                <span>{workspace.label}</span>
+                <small aria-hidden="true">{openCount ? openCount : ""}</small>
+              </button>
+            );
+          })}
+        </nav>
+
+        <nav
           className="os-dock"
           aria-label="Workbench applications"
           aria-hidden={isPaletteOpen || undefined}

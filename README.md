@@ -67,9 +67,9 @@ First-person notes explain why Sam built each project, how it works, and the eng
 
 ### Workbench
 
-`WorkbenchOverlay` loads the desktop dynamically. `WorkbenchOSV3` manages applications, workspaces, windows, menus, search, and browser-local session state. Desktop-sized windows can be dragged, resized, minimized, maximized, restored, and snapped. Compact screens show one active window with a taskbar for switching apps.
+`WorkbenchOverlay` loads the desktop dynamically. `WorkbenchOSV3` manages applications, workspaces, windows, menus, search, and browser-local session state. Desktop-sized windows can be dragged, resized, minimized, maximized, restored, and snapped. Compact screens show one active window with a workspace bar and taskbar for switching.
 
-Existing deep links remain compatible:
+Existing deep links remain compatible (`?workbench` and `?open` both open the desktop):
 
 ```text
 https://www.sambai.dev/?workbench
@@ -78,7 +78,9 @@ https://www.sambai.dev/?app=scratch     # Notes in Notes
 https://www.sambai.dev/?workspace=build # Work workspace
 ```
 
-Visible labels use Work, Playground, and Notes. Internal IDs such as `build`, `field`, `pulse`, and `scratch` remain stable for saved sessions and links. Apps open in their assigned workspace; an app parameter takes precedence over a conflicting workspace parameter.
+Switching workspaces or apps updates the address bar, so the current `?workspace=` and `?app=` values can be shared directly. App and workspace parameters combine; an app parameter takes precedence over a conflicting workspace parameter.
+
+Visible labels use Work, Playground, and Notes. Internal IDs such as `build`, `field`, `pulse`, and `scratch` remain stable for saved sessions and links. Apps open in their assigned workspace.
 
 ## Project Structure
 
@@ -167,22 +169,26 @@ A fresh session opens **Welcome** in Work. Playground and Notes begin empty. A v
 
 Notes, Vector lab, and Files support multiple instances through Shift-modified dock activation. Other apps reuse their saved instance. **Window overview** (`F3`) can focus one window, bring a window to the front while preserving others, or show all minimized windows. Cobalt, Oxide, and Graphite themes change the Workbench accent palette while retaining its structure.
 
+**Terminal** accepts `open [app]`, `workspace [build|field|notes]`, `theme [cobalt|oxide|graphite]`, `tidy`, `close all`, `atlas`, `search`, `whoami`, `contact`, `clear`, and `help`, with the last 40 commands recallable through the history. **Search** (`Ctrl/Cmd+K`) finds applications, open windows (reopen, restore, or focus), Files entries including note contents, and system actions such as Window overview, Arrange windows, Export local session, and Return to portfolio.
+
+Desktop shortcuts open Files, Projects, and Settings directly. Right-clicking empty desktop space offers Find, Window overview, Tidy workspace, New Files window, and Settings.
+
 ### Games and tools
 
 - **Subsurface** is an original Three.js underwater research game across three zones. Rise, dive, collect specimens, use sonar, and manage hull and protection. Keyboard and touch controls share the same actions. A 2D fallback preserves the simulation when WebGL is unavailable.
 - **Railshift** is an original Three.js runner through a dense metropolitan city, with trains and a dock-warden pursuer. Short park and waterfront districts interrupt the downtown skyline; a Ferris wheel belongs to the park, and a whale makes rare waterfront appearances. Change lanes, jump, slide, and collect gold. Rocket backpacks launch automatic flight; magnets pull nearby coins along visible curves. Shields, two lives, checkpoints, and coin-charged Overdrive provide recovery and progression. Arrow/WASD keys, Space, Shift, `P` to pause, swipes, and labeled touch controls are supported.
 - **Vector lab** combines a 3D scene with Dock, Thrust, and Lift missions and free Explore mode. Adjust vectors, compare addition, projection, angle, and cross product, then send a probe to test the result. Numeric calculations and mission checks remain usable without WebGL. Vector lab is available in Playground.
 - **Market monitor** shows eight crypto assets in USD or NZD, with 24H, 7D, and 30D price history. EMA 20 and EMA 50 overlays use observed sample periods, with the actual sampling cadence shown beside the chart. Pointer inspection and a keyboard/touch history slider expose individual observations. The watchlist sorts by market cap, gainers, or losers; a separate panel shows the actual CoinMarketCap Fear & Greed Index. Visible views refresh every 90 seconds, and stale data or unavailable services are labeled.
-- **Projects** contains interactive Trekky and BaiOS details, a labeled spring simulation, and an **All projects** link to the public directory. **Project brief** prepares an email enquiry without inventing a quote or delivery schedule.
+- **Projects** contains interactive Trekky and BaiOS details, a labeled spring simulation, and an **All projects** link to the public directory. **Project brief** walks through service area, scope, and contact details, then copies or downloads a planning-brief markdown and opens an email draft, without inventing a quote or delivery schedule.
 - **Web search** retrieves attributed Wikipedia results and can save them to Files. **Ask about Sam** answers questions about Sam's public profile and projects using approved, surface-level summaries. Only the current question is sent to OpenRouter and NVIDIA. The model selects one to three approved topic IDs; the server validates the selection and returns the corresponding written summaries. The interface keeps up to five question-and-answer turns in memory, with Stop and Clear conversation controls. Earlier turns are not sent with a new question. Questions leave the browser, and the interface asks visitors to leave out confidential information.
 
-Games start only on request and pause when the application or page becomes inactive. Resume continues the current in-memory run. Sound is opt-in. Reduced motion removes nonessential movement, and 3D resources are released when no longer needed.
+Games start only on request and pause when the application or page becomes inactive. Resume continues the current in-memory run. Sound is opt-in everywhere: games stay silent unless enabled, and the Settings toggle enables short synthesized interface sounds (no audio assets or requests) with the preference synced across tabs. Reduced motion removes nonessential movement, and 3D resources are released when no longer needed.
 
 ### Browser-local persistence
 
-Workbench session and Files data stay in this browser. There is no account, login, remote sync, or remote filesystem for that state. Files supports folders, editable notes, renaming, trash, restoration, and confirmed permanent deletion.
+Workbench session and Files data stay in this browser. There is no account, login, remote sync, or remote filesystem for that state. Files ships with a starter library (About, Solynth, Trekky, Method, Experiments), list and grid views, and folders, editable notes, renaming, trash, restoration, and confirmed permanent deletion. Entries can also be app links that open a Workbench app or external links that open a site.
 
-**Settings** can download or restore a versioned JSON backup containing session and Files state, or restore a workspace's window layout without replacing content. Session data includes the theme, workspace, window geometry, Notes, and How I work state. Session and Files are validated and saved together. Imports are size-limited and schema-checked; corrupt saved state is preserved for recovery, and conflicting edits from another tab have an explicit resolution path.
+**Settings** shows the session status (new, restored, or saving), switches theme and workspace, and can download or restore a versioned JSON backup containing session and Files state, or restore the active workspace's window layout without replacing content. Session data includes the theme, workspace, window geometry, Notes, and How I work state. Session and Files are validated and saved together. Imports are size-limited and schema-checked; corrupt saved state is preserved for recovery, and conflicting edits from another tab have an explicit resolution path.
 
 Project brief drafts, Vector's per-instance vectors/view/mission progress, sound preference, and local game records use separate browser storage and are **not included in Settings backups**. In-progress games and temporary interface state are not promised to survive a reload. Network-backed market data, Wikipedia results, and AI responses are separate from local persistence.
 
@@ -268,5 +274,6 @@ Modified network deployments must offer their corresponding source code under th
 - **Styles not updating?** Use `npm run dev` to run the configured Webpack development server, and restart it after configuration changes. Keep `@import "tailwindcss"` at the top of `app/styles/global.css`.
 - **Textures not showing?** The carbon grain lives at `app/assets/carbon-grain.webp` and is referenced from the global and Workbench CSS bundles.
 - **Workbench state lost?** State belongs to the current browser and origin. Settings can download a session and Files backup; separately stored Project brief/Vector state, sound preferences, and game records are not exported.
+- **Missing windows on mobile?** Compact screens show one active window at a time. Use the workspace bar above the taskbar to switch between Work, Playground, and Notes, the taskbar to switch apps within a workspace, and Window overview (`F3`) or Search (`Ctrl/Cmd+K`) to find anything else.
 - **Market data unavailable?** The interface shows provider failures or stale timestamps. Optional provider keys can be configured server-side; the app does not require them to start.
 - **3D view unavailable?** Check that the browser supports WebGL and hardware acceleration. Subsurface offers a 2D fallback and Vector retains its calculations; Railshift explains when its required 3D view cannot start.
